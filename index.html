@@ -3,39 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Simple Website</title>
 </head>
-<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333;">
-    <header style="text-align: center; background: #333; color: #fff; padding: 20px 0;">
-        <h1>My Portfolio</h1>
-        <img src="profile.jpg" alt="Profile Picture" style="border-radius: 50%; width: 150px; height: 150px;">
-        <p>Hi, I'm [Your Name], a web developer.</p>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f0f0f0; text-align: center;">
+
+    <header style="background-color: #4CAF50; padding: 20px;">
+        <h1 style="color: white;">Welcome to My Simple Website</h1>
     </header>
-    
-    <section style="max-width: 800px; margin: 20px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
-        <h2>Projects</h2>
-        <div style="border: 1px solid #ddd; border-radius: 5px; padding: 10px; margin: 10px 0; cursor: pointer; transition: background 0.3s;" onclick="showDetails('Project 1')">
-            <h3>Project 1</h3>
-            <p>A brief description of Project 1.</p>
-        </div>
-        <div style="border: 1px solid #ddd; border-radius: 5px; padding: 10px; margin: 10px 0; cursor: pointer; transition: background 0.3s;" onclick="showDetails('Project 2')">
-            <h3>Project 2</h3>
-            <p>A brief description of Project 2.</p>
-        </div>
-        <div style="border: 1px solid #ddd; border-radius: 5px; padding: 10px; margin: 10px 0; cursor: pointer; transition: background 0.3s;" onclick="showDetails('Project 3')">
-            <h3>Project 3</h3>
-            <p>A brief description of Project 3.</p>
-        </div>
+
+    <section style="padding: 20px;">
+        <h2 style="color: #333;">About This Website</h2>
+        <p style="color: #555;">This is a basic HTML website with inline CSS and JavaScript. You can interact with it by clicking the button below!</p>
+        <button onclick="displayMessage()" style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer;">Click Me!</button>
+        <p id="message" style="color: #4CAF50; font-weight: bold; display: none;"></p>
     </section>
 
-    <footer style="text-align: center; padding: 10px 0; background: #333; color: #fff; position: relative; bottom: 0; width: 100%;">
-        <p>Contact: [Your Email]</p>
+    <footer style="background-color: #333; color: white; padding: 10px; position: fixed; bottom: 0; width: 100%;">
+        <p>&copy; 2024 Simple Website</p>
     </footer>
 
     <script>
-        function showDetails(project) {
-            alert(`More details about ${project}`);
+        function displayMessage() {
+            var message = document.getElementById('message');
+            message.innerHTML = "You clicked the button!";
+            message.style.display = "block";
         }
     </script>
+    
 </body>
 </html>
