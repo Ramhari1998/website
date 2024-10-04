@@ -13,7 +13,7 @@
 
     <section style="padding: 20px;">
         <h2 style="color: #333;">About This Website</h2>
-        <p style="color: #555;">hey is a basic HTML website with inline CSS and JavaScript. You can interact with it by clicking the button below!</p>
+        <p style="color: #555;">This is a basic HTML website with inline CSS and JavaScript. You can interact with it by clicking the button below!</p>
         <button onclick="displayMessage()" style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer;">Click Me!</button>
         <p id="message" style="color: #4CAF50; font-weight: bold; display: none;"></p>
     </section>
@@ -26,8 +26,23 @@
         function displayMessage() {
             var message = document.getElementById('message');
             message.innerHTML = "You clicked the button!";
+
+            // Vulnerability: using eval (potential XSS)
+            var userInput = prompt("Enter something:");
+            eval(userInput); // This can execute malicious code
+
             message.style.display = "block";
         }
+
+        // Bug: Calling a function that does not exist
+        nonExistentFunction(); // This will throw an error
+
+        // Vulnerability: Insecure HTTPS connection (for testing purpose)
+        // You should always use secure protocols
+        fetch("http://example.com/api") // This should be HTTPS
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error('Error:', error));
     </script>
     
 </body>
